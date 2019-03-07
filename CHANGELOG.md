@@ -1,3 +1,18 @@
+## 2019-03-07, Version 1.1.0
+### Commits
+- [[`36ee5ddeb8`](https://github.com/yoshuawuyts/ready/commit/36ee5ddeb8e72af386ee9a17351eeae309e3c98e)] (cargo-release) version 1.1.0 (Yoshua Wuyts)
+- [[`21746f6bb6`](https://github.com/yoshuawuyts/ready/commit/21746f6bb6019583b362b98b8090ca05c4ffe136)] add TakeError (Yoshua Wuyts)
+- [[`6014621dbe`](https://github.com/yoshuawuyts/ready/commit/6014621dbeb33f7f53ea0517cc59d40a3f030dde)] Update changelog (Yoshua Wuyts)
+
+### Stats
+```diff
+ CHANGELOG.md | 15 +++++++++++++++
+ Cargo.toml   |  2 +-
+ src/lib.rs   | 25 ++++++++++++++++++++++---
+ 3 files changed, 38 insertions(+), 4 deletions(-)
+```
+
+
 ## 2019-03-07, Version 1.0.2
 ### Commits
 - [[`98cecf5a32`](https://github.com/yoshuawuyts/ready/commit/98cecf5a32491a3d9fb238954ba6adbb619f1cf6)] (cargo-release) version 1.0.2 (Yoshua Wuyts)
