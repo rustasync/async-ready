@@ -25,7 +25,7 @@
 //! impl ready::Ready for Fut {
 //!   type Ok = ();
 //!   type Err = io::Error;
-//!   fn poll_ready(&self, waker: &Waker)
+//!   fn poll_ready(&mut self, waker: &Waker)
 //!     -> Poll<Result<Self::Ok, Self::Err>> {
 //!     Poll::Ready(Ok(()))
 //!   }
@@ -45,7 +45,7 @@ pub trait WriteReady {
   type Err;
 
   /// Check if the underlying API can be written to.
-  fn poll_write_ready(&self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
+  fn poll_write_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
 }
 
 /// Determine if the underlying API can be read from.
@@ -57,7 +57,7 @@ pub trait ReadReady {
   type Err;
 
   /// Check if the underlying API can be read from.
-  fn poll_read_ready(&self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
+  fn poll_read_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
 }
 
 /// Determine if a struct is ready to yield futures.
@@ -76,5 +76,5 @@ pub trait Ready {
   type Err;
 
   /// Check if the stream can be read from.
-  fn poll_ready(&self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
+  fn poll_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
 }
