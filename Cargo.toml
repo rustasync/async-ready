@@ -1,0 +1,17 @@
+[package]
+name = "ready"
+version = "1.0.0"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yoshuawuyts/ready"
+documentation = "https://docs.rs/ready"
+description = "Async ready states."
+keywords = ["async", "ready", "poll_ready"]
+categories = ["asynchronous"]
+authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
+readme = "README.md"
+edition = "2018"
+
+[dependencies]
+
+[dev-dependencies]
+futures-preview = "0.3.0-alpha.13"
