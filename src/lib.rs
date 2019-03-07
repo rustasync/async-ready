@@ -42,7 +42,7 @@ pub trait WriteReady {
   type Ok;
 
   /// The type of failures yielded by this trait.
-  type Err;
+  type Err: std::error::Error + Send + Sync;
 
   /// Check if the underlying API can be written to.
   fn poll_write_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
@@ -54,7 +54,7 @@ pub trait ReadReady {
   type Ok;
 
   /// The type of failures yielded by this trait.
-  type Err;
+  type Err: std::error::Error + Send + Sync;
 
   /// Check if the underlying API can be read from.
   fn poll_read_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
@@ -73,8 +73,27 @@ pub trait Ready {
   type Ok;
 
   /// The type of failures yielded by this trait.
-  type Err;
+  type Err: std::error::Error + Send + Sync;
 
   /// Check if the stream can be read from.
   fn poll_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
+}
+
+/// Extract an error from the underlying struct that isn't propagated through
+/// regular channels.
+///
+/// This is common in `TcpListener` / `UdsStream` structs where this trait can
+/// be used to access the `SO_ERROR` option on the socket.
+///
+/// Both `Ok` and `Err` are error types. If no error exists `take_error` should
+/// return `Ok(None)`.
+pub trait TakeError {
+  /// The type of successful values yielded by this trait.
+  type Ok: std::error::Error + Send + Sync;
+
+  /// The type of failures yielded by this trait.
+  type Err: std::error::Error + Send + Sync;
+
+  /// Return an underlying error value of the struct.
+  fn take_error(&self) -> Result<Option<Self::Ok>, Self::Err>;
 }
