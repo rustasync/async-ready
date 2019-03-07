@@ -2,9 +2,8 @@
 [![crates.io version][1]][2] [![build status][3]][4]
 [![downloads][5]][6] [![docs.rs docs][7]][8]
 
-Async readiness traits. Useful when implementing async state machine internals,
-without directly relying on custom Futures structs. For example
-`romio::TcpListener` and `romio::TcpStream`.
+Async readiness traits. Useful when implementing async state machines
+that can later be wrapped in dedicated futures.
 
 - [Documentation][8]
 - [Crates.io][2]
