@@ -1,3 +1,18 @@
+## 2019-03-07, Version 1.0.2
+### Commits
+- [[`98cecf5a32`](https://github.com/yoshuawuyts/ready/commit/98cecf5a32491a3d9fb238954ba6adbb619f1cf6)] (cargo-release) version 1.0.2 (Yoshua Wuyts)
+- [[`ab5beaa174`](https://github.com/yoshuawuyts/ready/commit/ab5beaa174a79cdea95bfbbc640909c0dcf740f8)] fix mutability (Yoshua Wuyts)
+- [[`38271c0725`](https://github.com/yoshuawuyts/ready/commit/38271c0725a0cd27d2faffd5ea943c74e74bb718)] Update changelog (Yoshua Wuyts)
+
+### Stats
+```diff
+ CHANGELOG.md | 31 +++++++++++++++++++++++++++++++
+ Cargo.toml   |  2 +-
+ src/lib.rs   |  8 ++++----
+ 3 files changed, 36 insertions(+), 5 deletions(-)
+```
+
+
 ## 2019-03-07, Version 1.0.1
 ### Commits
 - [[`455bd12a1a`](https://github.com/yoshuawuyts/ready/commit/455bd12a1aeac3deae4c8432050b69eced51b956)] (cargo-release) version 1.0.1 (Yoshua Wuyts)
