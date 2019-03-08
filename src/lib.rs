@@ -50,7 +50,7 @@ pub trait AsyncWriteReady {
   type Err: std::error::Error + Send + Sync;
 
   /// Check if the underlying API can be written to.
-  fn poll_write_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
+  fn poll_write_ready(&self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
 }
 
 /// Determine if the underlying API can be read from.
@@ -62,7 +62,7 @@ pub trait AsyncReadReady {
   type Err: std::error::Error + Send + Sync;
 
   /// Check if the underlying API can be read from.
-  fn poll_read_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
+  fn poll_read_ready(&self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
 }
 
 /// Determine if a struct is async-ready to yield futures.
@@ -81,7 +81,7 @@ pub trait AsyncReady {
   type Err: std::error::Error + Send + Sync;
 
   /// Check if the stream can be read from.
-  fn poll_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
+  fn poll_ready(&self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
 }
 
 /// Extract an error from the underlying struct that isn't propagated through
