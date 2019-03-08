@@ -3,6 +3,9 @@
 #![deny(missing_docs)]
 #![cfg_attr(test, deny(warnings))]
 
+//! Async readiness traits. Useful when implementing async state machines
+//! that can later be wrapped in dedicated futures.
+//!
 //! ## Example
 //!
 //! ```rust
@@ -11,6 +14,7 @@
 //! use std::pin::Pin;
 //! use std::task::{Poll, Waker};
 //! use futures::prelude::*;
+//! use async_ready::AsyncReady;
 //! use std::io;
 //!
 //! struct Fut;
@@ -22,9 +26,10 @@
 //!   }
 //! }
 //!
-//! impl ready::Ready for Fut {
+//! impl AsyncReady for Fut {
 //!   type Ok = ();
 //!   type Err = io::Error;
+//!
 //!   fn poll_ready(&mut self, waker: &Waker)
 //!     -> Poll<Result<Self::Ok, Self::Err>> {
 //!     Poll::Ready(Ok(()))
@@ -37,7 +42,7 @@
 use std::task::{Poll, Waker};
 
 /// Determine if the underlying API can be written to.
-pub trait WriteReady {
+pub trait AsyncWriteReady {
   /// The type of successful values yielded by this trait.
   type Ok;
 
@@ -49,7 +54,7 @@ pub trait WriteReady {
 }
 
 /// Determine if the underlying API can be read from.
-pub trait ReadReady {
+pub trait AsyncReadReady {
   /// The type of successful values yielded by this trait.
   type Ok;
 
@@ -60,15 +65,15 @@ pub trait ReadReady {
   fn poll_read_ready(&mut self, waker: &Waker) -> Poll<Result<Self::Ok, Self::Err>>;
 }
 
-/// Determine if a struct is ready to yield futures.
+/// Determine if a struct is async-ready to yield futures.
 ///
 /// This is useful when a `Stream` borrows an internal struct, and the internal
 /// struct is in charge of establishing the io channel. That way the stream and
 /// the readiness can be decoupled.
 ///
-/// Once the IO channel is ready, `poll_ready` should always return
+/// Once the IO channel is async-ready, `poll_async-ready` should always return
 /// `Poll::Ready`.
-pub trait Ready {
+pub trait AsyncReady {
   /// The type of successful values yielded by this trait.
   type Ok;
 

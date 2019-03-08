@@ -1,4 +1,4 @@
-# ready
+# async-ready
 [![crates.io version][1]][2] [![build status][3]][4]
 [![downloads][5]][6] [![docs.rs docs][7]][8]
 
@@ -17,6 +17,7 @@ __Basic usage__
 use std::pin::Pin;
 use std::task::{Poll, Waker};
 use futures::prelude::*;
+use async_ready::AsyncReady;
 use std::io;
 
 struct Fut;
@@ -28,10 +29,11 @@ impl Future for Fut {
   }
 }
 
-impl ready::Ready for Fut {
+impl AsyncReady for Fut {
   type Ok = ();
   type Err = io::Error;
-  fn poll_ready(&self, waker: &Waker)
+
+  fn poll_ready(&mut self, waker: &Waker)
     -> Poll<Result<Self::Ok, Self::Err>> {
     Poll::Ready(Ok(()))
   }
@@ -40,7 +42,7 @@ impl ready::Ready for Fut {
 
 ## Installation
 ```sh
-$ cargo add ready
+$ cargo add async-ready
 ```
 
 ## Safety
@@ -60,16 +62,16 @@ None.
 ## License
 [MIT](./LICENSE-MIT) OR [Apache-2.0](./LICENSE-APACHE)
 
-[1]: https://img.shields.io/crates/v/ready.svg?style=flat-square
-[2]: https://crates.io/crates/ready
-[3]: https://img.shields.io/travis/yoshuawuyts/ready/master.svg?style=flat-square
-[4]: https://travis-ci.org/yoshuawuyts/ready
-[5]: https://img.shields.io/crates/d/ready.svg?style=flat-square
-[6]: https://crates.io/crates/ready
+[1]: https://img.shields.io/crates/v/async-ready.svg?style=flat-square
+[2]: https://crates.io/crates/async-ready
+[3]: https://img.shields.io/travis/yoshuawuyts/async-ready/master.svg?style=flat-square
+[4]: https://travis-ci.org/yoshuawuyts/async-ready
+[5]: https://img.shields.io/crates/d/async-ready.svg?style=flat-square
+[6]: https://crates.io/crates/async-ready
 [7]: https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square
-[8]: https://docs.rs/ready
+[8]: https://docs.rs/async-ready
 
-[releases]: https://github.com/yoshuawuyts/ready/releases
-[contributing]: https://github.com/yoshuawuyts/ready/blob/master.github/CONTRIBUTING.md
-[good-first-issue]: https://github.com/yoshuawuyts/ready/labels/good%20first%20issue
-[help-wanted]: https://github.com/yoshuawuyts/ready/labels/help%20wanted
+[releases]: https://github.com/yoshuawuyts/async-ready/releases
+[contributing]: https://github.com/yoshuawuyts/async-ready/blob/master.github/CONTRIBUTING.md
+[good-first-issue]: https://github.com/yoshuawuyts/async-ready/labels/good%20first%20issue
+[help-wanted]: https://github.com/yoshuawuyts/async-ready/labels/help%20wanted

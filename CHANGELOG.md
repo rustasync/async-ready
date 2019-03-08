@@ -1,8 +1,8 @@
 ## 2019-03-07, Version 1.1.0
 ### Commits
-- [[`36ee5ddeb8`](https://github.com/yoshuawuyts/ready/commit/36ee5ddeb8e72af386ee9a17351eeae309e3c98e)] (cargo-release) version 1.1.0 (Yoshua Wuyts)
-- [[`21746f6bb6`](https://github.com/yoshuawuyts/ready/commit/21746f6bb6019583b362b98b8090ca05c4ffe136)] add TakeError (Yoshua Wuyts)
-- [[`6014621dbe`](https://github.com/yoshuawuyts/ready/commit/6014621dbeb33f7f53ea0517cc59d40a3f030dde)] Update changelog (Yoshua Wuyts)
+- [[`36ee5ddeb8`](https://github.com/yoshuawuyts/async-ready/commit/36ee5ddeb8e72af386ee9a17351eeae309e3c98e)] (cargo-release) version 1.1.0 (Yoshua Wuyts)
+- [[`21746f6bb6`](https://github.com/yoshuawuyts/async-ready/commit/21746f6bb6019583b362b98b8090ca05c4ffe136)] add TakeError (Yoshua Wuyts)
+- [[`6014621dbe`](https://github.com/yoshuawuyts/async-ready/commit/6014621dbeb33f7f53ea0517cc59d40a3f030dde)] Update changelog (Yoshua Wuyts)
 
 ### Stats
 ```diff
@@ -15,9 +15,9 @@
 
 ## 2019-03-07, Version 1.0.2
 ### Commits
-- [[`98cecf5a32`](https://github.com/yoshuawuyts/ready/commit/98cecf5a32491a3d9fb238954ba6adbb619f1cf6)] (cargo-release) version 1.0.2 (Yoshua Wuyts)
-- [[`ab5beaa174`](https://github.com/yoshuawuyts/ready/commit/ab5beaa174a79cdea95bfbbc640909c0dcf740f8)] fix mutability (Yoshua Wuyts)
-- [[`38271c0725`](https://github.com/yoshuawuyts/ready/commit/38271c0725a0cd27d2faffd5ea943c74e74bb718)] Update changelog (Yoshua Wuyts)
+- [[`98cecf5a32`](https://github.com/yoshuawuyts/async-ready/commit/98cecf5a32491a3d9fb238954ba6adbb619f1cf6)] (cargo-release) version 1.0.2 (Yoshua Wuyts)
+- [[`ab5beaa174`](https://github.com/yoshuawuyts/async-ready/commit/ab5beaa174a79cdea95bfbbc640909c0dcf740f8)] fix mutability (Yoshua Wuyts)
+- [[`38271c0725`](https://github.com/yoshuawuyts/async-ready/commit/38271c0725a0cd27d2faffd5ea943c74e74bb718)] Update changelog (Yoshua Wuyts)
 
 ### Stats
 ```diff
@@ -30,9 +30,9 @@
 
 ## 2019-03-07, Version 1.0.1
 ### Commits
-- [[`455bd12a1a`](https://github.com/yoshuawuyts/ready/commit/455bd12a1aeac3deae4c8432050b69eced51b956)] (cargo-release) version 1.0.1 (Yoshua Wuyts)
-- [[`331b94abd0`](https://github.com/yoshuawuyts/ready/commit/331b94abd01c5848e51584ebf3ce5684cf08dd02)] tweak desc (Yoshua Wuyts)
-- [[`9ea6f9f059`](https://github.com/yoshuawuyts/ready/commit/9ea6f9f0594e56261e46261b08ccfdebf7012299)] . (Yoshua Wuyts)
+- [[`455bd12a1a`](https://github.com/yoshuawuyts/async-ready/commit/455bd12a1aeac3deae4c8432050b69eced51b956)] (cargo-release) version 1.0.1 (Yoshua Wuyts)
+- [[`331b94abd0`](https://github.com/yoshuawuyts/async-ready/commit/331b94abd01c5848e51584ebf3ce5684cf08dd02)] tweak desc (Yoshua Wuyts)
+- [[`9ea6f9f059`](https://github.com/yoshuawuyts/async-ready/commit/9ea6f9f0594e56261e46261b08ccfdebf7012299)] . (Yoshua Wuyts)
 
 ### Stats
 ```diff

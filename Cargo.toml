@@ -1,11 +1,11 @@
 [package]
-name = "ready"
-version = "1.1.0"
+name = "async-ready"
+version = "1.0.0"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/yoshuawuyts/ready"
-documentation = "https://docs.rs/ready"
-description = "Async ready states."
-keywords = ["async", "ready", "poll_ready"]
+repository = "https://github.com/yoshuawuyts/async-ready"
+documentation = "https://docs.rs/async-ready"
+description = "Async async-ready states."
+keywords = ["async", "ready_state", "poll_ready"]
 categories = ["asynchronous"]
 authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
 readme = "README.md"
