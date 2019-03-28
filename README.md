@@ -64,14 +64,14 @@ None.
 
 [1]: https://img.shields.io/crates/v/async-ready.svg?style=flat-square
 [2]: https://crates.io/crates/async-ready
-[3]: https://img.shields.io/travis/yoshuawuyts/async-ready/master.svg?style=flat-square
-[4]: https://travis-ci.org/yoshuawuyts/async-ready
+[3]: https://img.shields.io/travis/rustasync/async-ready/master.svg?style=flat-square
+[4]: https://travis-ci.org/rustasync/async-ready
 [5]: https://img.shields.io/crates/d/async-ready.svg?style=flat-square
 [6]: https://crates.io/crates/async-ready
 [7]: https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square
 [8]: https://docs.rs/async-ready
 
-[releases]: https://github.com/yoshuawuyts/async-ready/releases
-[contributing]: https://github.com/yoshuawuyts/async-ready/blob/master.github/CONTRIBUTING.md
-[good-first-issue]: https://github.com/yoshuawuyts/async-ready/labels/good%20first%20issue
-[help-wanted]: https://github.com/yoshuawuyts/async-ready/labels/help%20wanted
+[releases]: https://github.com/rustasync/async-ready/releases
+[contributing]: https://github.com/rustasync/async-ready/blob/master.github/CONTRIBUTING.md
+[good-first-issue]: https://github.com/rustasync/async-ready/labels/good%20first%20issue
+[help-wanted]: https://github.com/rustasync/async-ready/labels/help%20wanted

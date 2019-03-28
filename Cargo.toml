@@ -2,12 +2,12 @@
 name = "async-ready"
 version = "2.0.0"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/yoshuawuyts/async-ready"
+repository = "https://github.com/rustasync/async-ready"
 documentation = "https://docs.rs/async-ready"
 description = "Async readiness traits."
 keywords = ["async", "ready_state", "poll_ready"]
 categories = ["asynchronous"]
-authors = ["Yoshua Wuyts <yoshuawuyts@gmail.com>"]
+authors = ["The Rust Async Ecosystem Working Group"]
 readme = "README.md"
 edition = "2018"
 
