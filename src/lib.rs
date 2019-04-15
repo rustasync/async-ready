@@ -21,7 +21,7 @@
 //!
 //! impl Future for Fut {
 //!   type Output = ();
-//!   fn poll(self: Pin<&mut Self>, waker: &Waker) -> Poll<Self::Output> {
+//!   fn poll(self: Pin<&mut Self>, _cx: &mut Context<'_>) -> Poll<Self::Output> {
 //!     Poll::Ready(())
 //!   }
 //! }

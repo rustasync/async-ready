@@ -14,4 +14,4 @@ edition = "2018"
 [dependencies]
 
 [dev-dependencies]
-futures-preview = "0.3.0-alpha.13"
+futures-preview = "0.3.0-alpha.14"
