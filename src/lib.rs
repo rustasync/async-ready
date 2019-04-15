@@ -95,22 +95,3 @@ pub trait AsyncReady {
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>;
 }
-
-/// Extract an error from the underlying struct that isn't propagated through
-/// regular channels.
-///
-/// This is common in `TcpListener` / `UdsStream` structs where this trait can
-/// be used to access the `SO_ERROR` option on the socket.
-///
-/// Both `Ok` and `Err` are error types. If no error exists `take_error` should
-/// return `Ok(None)`.
-pub trait TakeError {
-  /// The type of successful values yielded by this trait.
-  type Ok: std::error::Error + Send + Sync;
-
-  /// The type of failures yielded by this trait.
-  type Err: std::error::Error + Send + Sync;
-
-  /// Return an underlying error value of the struct.
-  fn take_error(&self) -> Result<Option<Self::Ok>, Self::Err>;
-}
