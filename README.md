@@ -15,7 +15,7 @@ __Basic usage__
 #![feature(futures_api)]
 
 use std::pin::Pin;
-use std::task::{Poll, Waker};
+use std::task::{Context, Poll};
 use futures::prelude::*;
 use async_ready::AsyncReady;
 use std::io;
@@ -24,7 +24,7 @@ struct Fut;
 
 impl Future for Fut {
   type Output = ();
-  fn poll(self: Pin<&mut Self>, waker: &Waker) -> Poll<Self::Output> {
+  fn poll(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Output> {
     Poll::Ready(())
   }
 }
@@ -33,8 +33,10 @@ impl AsyncReady for Fut {
   type Ok = ();
   type Err = io::Error;
 
-  fn poll_ready(&mut self, waker: &Waker)
-    -> Poll<Result<Self::Ok, Self::Err>> {
+  fn poll_ready(
+    mut self: Pin<&mut Self>,
+    cx: &mut Context<'_>,
+  ) -> Poll<Result<Self::Ok, Self::Err>> {
     Poll::Ready(Ok(()))
   }
 }
