@@ -12,7 +12,7 @@
 //! #![feature(futures_api)]
 //!
 //! use std::pin::Pin;
-//! use std::task::{Poll, Waker};
+//! use std::task::{Context, Poll};
 //! use futures::prelude::*;
 //! use async_ready::AsyncReady;
 //! use std::io;
@@ -41,6 +41,7 @@
 
 #![feature(futures_api)]
 
+use std::pin::Pin;
 use std::task::{Context, Poll};
 
 /// Determine if the underlying API can be written to.
@@ -53,7 +54,7 @@ pub trait AsyncWriteReady {
 
   /// Check if the underlying API can be written to.
   fn poll_write_ready(
-    mut self: Pin<&mut Self>,
+    self: Pin<&mut Self>,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>;
 }
@@ -68,7 +69,7 @@ pub trait AsyncReadReady {
 
   /// Check if the underlying API can be read from.
   fn poll_read_ready(
-    mut self: Pin<&mut Self>,
+    self: Pin<&mut Self>,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>;
 }
@@ -90,7 +91,7 @@ pub trait AsyncReady {
 
   /// Check if the stream can be read from.
   fn poll_ready(
-    mut self: Pin<&mut Self>,
+    self: Pin<&mut Self>,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>;
 }
