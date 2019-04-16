@@ -66,7 +66,7 @@ pub trait AsyncWriteReady {
   where
     Self: Unpin + Sized,
   {
-    Pin::new(self).poll_write_ready(cx)
+    self.poll_write_ready(cx)
   }
 }
 
@@ -92,7 +92,7 @@ pub trait AsyncReadReady {
   where
     Self: Unpin + Sized,
   {
-    Pin::new(self).poll_read_ready(cx)
+    self.poll_read_ready(cx)
   }
 }
 
@@ -125,7 +125,7 @@ pub trait AsyncReady {
   where
     Self: Unpin + Sized,
   {
-    Pin::new(self).poll_ready(cx)
+    self.poll_ready(cx)
   }
 }
 
