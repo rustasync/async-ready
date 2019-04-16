@@ -1,6 +1,6 @@
 [package]
 name = "async-ready"
-version = "2.0.1"
+version = "2.1.0"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/rustasync/async-ready"
 documentation = "https://docs.rs/async-ready"
