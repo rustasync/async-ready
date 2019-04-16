@@ -19,6 +19,25 @@
 
 ## 2019-03-08, Version 2.0.0
 ### Commits
+- [[`d33a453343`](https://github.com/rustasync/async-ready/commit/d33a453343bf2e51ee105aa35b49fb62853b626d)] (cargo-release) version 2.0.0 (Yoshua Wuyts)
+- [[`7b08b12253`](https://github.com/rustasync/async-ready/commit/7b08b122534873b1df5cae8875d26d580288e9ca)] no mut (Yoshua Wuyts)
+- [[`f083245279`](https://github.com/rustasync/async-ready/commit/f083245279100d04900c80feb70cb80c623a9e9a)] (cargo-release) version 1.0.1 (Yoshua Wuyts)
+- [[`5a37d2d1a3`](https://github.com/rustasync/async-ready/commit/5a37d2d1a30b9d7a8f1cfb38775b71b32f1c135b)] fix tagline (Yoshua Wuyts)
+- [[`858dbdbc5b`](https://github.com/rustasync/async-ready/commit/858dbdbc5ba0900faf6d5c68273a41e896b8a93c)] rename to async-ready (Yoshua Wuyts)
+- [[`c3a1d4df60`](https://github.com/rustasync/async-ready/commit/c3a1d4df60afb62023be7aad7678a72b4cb4f9e2)] Update changelog (Yoshua Wuyts)
+
+### Stats
+```diff
+ CHANGELOG.md | 27 +++++++++++++++++++++------
+ Cargo.toml   | 12 ++++++------
+ README.md    | 32 +++++++++++++++++---------------
+ src/lib.rs   | 23 ++++++++++++++---------
+ 4 files changed, 58 insertions(+), 36 deletions(-)
+```
+
+
+## 2019-03-08, Version 2.0.0
+### Commits
 - [[`d33a453343`](https://github.com/yoshuawuyts/async-ready/commit/d33a453343bf2e51ee105aa35b49fb62853b626d)] (cargo-release) version 2.0.0 (Yoshua Wuyts)
 - [[`7b08b12253`](https://github.com/yoshuawuyts/async-ready/commit/7b08b122534873b1df5cae8875d26d580288e9ca)] no mut (Yoshua Wuyts)
 - [[`f083245279`](https://github.com/yoshuawuyts/async-ready/commit/f083245279100d04900c80feb70cb80c623a9e9a)] (cargo-release) version 1.0.1 (Yoshua Wuyts)
