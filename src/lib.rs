@@ -57,6 +57,17 @@ pub trait AsyncWriteReady {
     self: Pin<&mut Self>,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>;
+
+  /// A convenience for calling `AsyncWriteReady::poll_write_ready` on `Unpin` types.
+  fn poll_write_ready_unpin(
+    self: Pin<&mut Self>,
+    cx: &mut Context<'_>,
+  ) -> Poll<Result<Self::Ok, Self::Err>>
+  where
+    Self: Unpin + Sized,
+  {
+    self.poll_write_ready(cx)
+  }
 }
 
 /// Determine if the underlying API can be read from.
@@ -72,6 +83,17 @@ pub trait AsyncReadReady {
     self: Pin<&mut Self>,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>;
+
+  /// A convenience for calling `AsyncReadReady::poll_read_ready` on `Unpin` types.
+  fn poll_read_ready_unpin(
+    self: Pin<&mut Self>,
+    cx: &mut Context<'_>,
+  ) -> Poll<Result<Self::Ok, Self::Err>>
+  where
+    Self: Unpin + Sized,
+  {
+    self.poll_read_ready(cx)
+  }
 }
 
 /// Determine if a struct is async-ready to yield futures.
@@ -94,6 +116,17 @@ pub trait AsyncReady {
     self: Pin<&mut Self>,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>;
+
+  /// A convenience for calling `AsyncReady::poll_ready` on `Unpin` types.
+  fn poll_ready_unpin(
+    self: Pin<&mut Self>,
+    cx: &mut Context<'_>,
+  ) -> Poll<Result<Self::Ok, Self::Err>>
+  where
+    Self: Unpin + Sized,
+  {
+    self.poll_ready(cx)
+  }
 }
 
 /// Extract an error from the underlying struct that isn't propagated through
