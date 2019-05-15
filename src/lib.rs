@@ -9,7 +9,6 @@
 //! ## Example
 //!
 //! ```rust
-//! #![feature(futures_api)]
 //!
 //! use std::pin::Pin;
 //! use std::task::{Context, Poll};
@@ -38,8 +37,6 @@
 //!   }
 //! }
 //! ```
-
-#![feature(futures_api)]
 
 use std::pin::Pin;
 use std::task::{Context, Poll};
