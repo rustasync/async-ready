@@ -57,13 +57,13 @@ pub trait AsyncWriteReady {
 
   /// A convenience for calling `AsyncWriteReady::poll_write_ready` on `Unpin` types.
   fn poll_write_ready_unpin(
-    self: Pin<&mut Self>,
+    &mut self,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>
   where
     Self: Unpin + Sized,
   {
-    self.poll_write_ready(cx)
+    Pin::new(self).poll_write_ready(cx)
   }
 }
 
@@ -83,13 +83,13 @@ pub trait AsyncReadReady {
 
   /// A convenience for calling `AsyncReadReady::poll_read_ready` on `Unpin` types.
   fn poll_read_ready_unpin(
-    self: Pin<&mut Self>,
+    &mut self,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>
   where
     Self: Unpin + Sized,
   {
-    self.poll_read_ready(cx)
+    Pin::new(self).poll_read_ready(cx)
   }
 }
 
@@ -116,13 +116,13 @@ pub trait AsyncReady {
 
   /// A convenience for calling `AsyncReady::poll_ready` on `Unpin` types.
   fn poll_ready_unpin(
-    self: Pin<&mut Self>,
+    &mut self,
     cx: &mut Context<'_>,
   ) -> Poll<Result<Self::Ok, Self::Err>>
   where
     Self: Unpin + Sized,
   {
-    self.poll_ready(cx)
+    Pin::new(self).poll_ready(cx)
   }
 }
 
